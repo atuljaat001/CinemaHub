@@ -1,0 +1,6 @@
+please create a public folder and inside this create two folders
+
+1. movie---> where you can store movies
+2. MoviesThumbnail---> where you can store movies thumbnail pics
+
+inside connectMongoDB function provide your mongoose url you can find it in command prompt just type mongosh

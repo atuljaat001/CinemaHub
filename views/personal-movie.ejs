@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Basic CSS for the movie card */
+      body {
+        background-color: black;
+      }
+      .movie-card {
+        display: flex;
+        background-color: #2c2c2c;
+        border-radius: 8px;
+        overflow: hidden;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 20px auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .poster img {
+        width: 200px;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .movie-details {
+        padding: 20px;
+        flex-grow: 1;
+      }
+
+      .movie-title {
+        font-size: 24px;
+        margin: 0 0 10px;
+      }
+
+      .movie-meta {
+        font-size: 14px;
+        color: #aaa;
+        margin-bottom: 10px;
+      }
+
+      .rating {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      .rating .rating-value {
+        font-weight: bold;
+        font-size: 20px;
+        color: #f39c12;
+      }
+
+      .description {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .movie-info p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .movie-info p strong {
+        color: #f39c12;
+      }
+      a {
+        text-decoration: none;
+        padding: 8px;
+        background-color: #058080;
+        border-radius: 8px;
+        color: white;
+        font-size: 20px;
+        margin-left: 18cm;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="movie-card">
+      <div class="poster">
+        <img
+          src="/<%=movie.Image %>"
+          alt="<%= movie.name %>
+        "
+        />
+      </div>
+      <div class="movie-details">
+        <h1 class="movie-title"><%=movie.name%>(<%= movie.year %>)</h1>
+        <p class="movie-meta">
+          Audio:
+          <span class="language"><%=movie.audio %></span>
+        </p>
+        <div class="rating">
+          <span class="rating-value"><%=movie.rating %></span> / 5
+        </div>
+        <p class="description"><%=movie.description %></p>
+      </div>
+    </div>
+
+    <div class="download-links">
+      <a href="/download-movie/<%= movie.name %>">Download movie</a>
+    </div>
+  </body>
+</html>

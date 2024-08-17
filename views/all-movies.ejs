@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Movies List</title>
+    <style>
+      /* styles.css */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f4f4f4;
+      }
+
+      .delete-link {
+        color: red;
+        text-decoration: none;
+      }
+
+      .delete-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Movies List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Movie Title</th>
+          <th>Size</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% movies.forEach(movie => { %>
+        <tr>
+          <td><%= movie.name %></td>
+          <td><%= movie.size %> GB</td>
+          <td>
+            <a href="/admin/delete/<%= movie._id %>" class="delete-link"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <script src="/scripts.js"></script>
+  </body>
+</html>
